@@ -1,2 +1,2 @@
-FROM archlinux as archbase
+FROM archlinux
 RUN pacman -Syu --noconfirm
