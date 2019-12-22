@@ -1,4 +1,6 @@
 FROM archlinux
-RUN pacman --noconfirm -S reflector
-RUN reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+# It is faster downloading Reflectior and chekcking which mirror is faster.
+RUN pacman --noconfirm -Sy reflector
+RUN reflector --verbose --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
+# Upgrade system
 RUN pacman -Syu --noconfirm
